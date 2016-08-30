@@ -5,40 +5,40 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import dao.PacoteDao;
-import dominio.Pacote;
+import dao.MatriculaDao;
+import dominio.Matricula;
 
-public class PacoteDaoImpl implements PacoteDao {
+public class MatriculaDaoImpl implements MatriculaDao {
 
 	private EntityManager em;
 
-	public PacoteDaoImpl() {
+	public MatriculaDaoImpl() {
 		this.em = EM.getLocalEm();
 	}
 	
 	@Override
-	public void inserirAtualizar(Pacote x) {
-		if (x.getCodPacote() != null) {
+	public void inserirAtualizar(Matricula x) {
+		if (x.getCodMatricula() != null) {
 			x = em.merge(x);
 		}
 		em.persist(x);
 	}
 
 	@Override
-	public void excluir(Pacote x) {
+	public void excluir(Matricula x) {
 		x = em.merge(x);
 		em.remove(x);
 	}
 
 	@Override
-	public Pacote buscar(int cod) {
-		return em.find(Pacote.class, cod);
+	public Matricula buscar(int cod) {
+		return em.find(Matricula.class, cod);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Pacote> buscarTodos() {
-		String jpql = "SELECT x FROM Pacote x";
+	public List<Matricula> buscarTodos() {
+		String jpql = "SELECT x FROM Matricula x";
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}

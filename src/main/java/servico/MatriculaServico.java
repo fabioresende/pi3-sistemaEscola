@@ -2,36 +2,36 @@ package servico;
 
 import java.util.List;
 
-import dao.PacoteDao;
+import dao.MatriculaDao;
 import dao.DaoFactory;
 import dao.impl.EM;
-import dominio.Pacote;
+import dominio.Matricula;
 
-public class PacoteServico {
+public class MatriculaServico {
 
-	private PacoteDao dao;
+	private MatriculaDao dao;
 	
-	public PacoteServico() {
-		dao = DaoFactory.criarPacoteDao();
+	public MatriculaServico() {
+		dao = DaoFactory.criarMatriculaDao();
 	}
 	
-	public void inserirAtualizar(Pacote x) {
+	public void inserirAtualizar(Matricula x) {
 		EM.getLocalEm().getTransaction().begin();
 		dao.inserirAtualizar(x);
 		EM.getLocalEm().getTransaction().commit();
 	}
 	
-	public void excluir(Pacote x) {
+	public void excluir(Matricula x) {
 		EM.getLocalEm().getTransaction().begin();
 		dao.excluir(x);
 		EM.getLocalEm().getTransaction().commit();
 	}
 	
-	public Pacote buscar(int cod) {
+	public Matricula buscar(int cod) {
 		return dao.buscar(cod);
 	}
 	
-	public List<Pacote> buscarTodos() {
+	public List<Matricula> buscarTodos() {
 		return dao.buscarTodos();
 	}
 }

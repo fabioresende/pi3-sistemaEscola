@@ -9,5 +9,5 @@
 	username="root"
 	password=""
 	driverClassName="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhost:3306/pacotes?autoReconnect=true"/>
+	url="jdbc:mysql://localhost:3306/escola?autoReconnect=true"/>
 </Context>

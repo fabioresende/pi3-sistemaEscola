@@ -2,36 +2,36 @@ package servico;
 
 import java.util.List;
 
-import dao.HotelDao;
+import dao.AlunoDao;
 import dao.DaoFactory;
 import dao.impl.EM;
-import dominio.Hotel;
+import dominio.Aluno;
 
-public class HotelServico {
+public class AlunoServico {
 
-	private HotelDao dao;
+	private AlunoDao dao;
 	
-	public HotelServico() {
-		dao = DaoFactory.criarHotelDao();
+	public AlunoServico() {
+		dao = DaoFactory.criarAlunoDao();
 	}
 	
-	public void inserirAtualizar(Hotel x) {
+	public void inserirAtualizar(Aluno x) {
 		EM.getLocalEm().getTransaction().begin();
 		dao.inserirAtualizar(x);
 		EM.getLocalEm().getTransaction().commit();
 	}
 	
-	public void excluir(Hotel x) {
+	public void excluir(Aluno x) {
 		EM.getLocalEm().getTransaction().begin();
 		dao.excluir(x);
 		EM.getLocalEm().getTransaction().commit();
 	}
 	
-	public Hotel buscar(int cod) {
+	public Aluno buscar(int cod) {
 		return dao.buscar(cod);
 	}
 	
-	public List<Hotel> buscarTodos() {
+	public List<Aluno> buscarTodos() {
 		return dao.buscarTodos();
 	}
 }

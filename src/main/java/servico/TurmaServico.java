@@ -2,36 +2,36 @@ package servico;
 
 import java.util.List;
 
-import dao.CidadeDao;
+import dao.TurmaDao;
 import dao.DaoFactory;
 import dao.impl.EM;
-import dominio.Cidade;
+import dominio.Turma;
 
-public class CidadeServico {
+public class TurmaServico {
 
-	private CidadeDao dao;
+	private TurmaDao dao;
 	
-	public CidadeServico() {
-		dao = DaoFactory.criarCidadeDao();
+	public TurmaServico() {
+		dao = DaoFactory.criarTurmaDao();
 	}
 	
-	public void inserirAtualizar(Cidade x) {
+	public void inserirAtualizar(Turma x) {
 		EM.getLocalEm().getTransaction().begin();
 		dao.inserirAtualizar(x);
 		EM.getLocalEm().getTransaction().commit();
 	}
 	
-	public void excluir(Cidade x) {
+	public void excluir(Turma x) {
 		EM.getLocalEm().getTransaction().begin();
 		dao.excluir(x);
 		EM.getLocalEm().getTransaction().commit();
 	}
 	
-	public Cidade buscar(int cod) {
+	public Turma buscar(int cod) {
 		return dao.buscar(cod);
 	}
 	
-	public List<Cidade> buscarTodos() {
+	public List<Turma> buscarTodos() {
 		return dao.buscarTodos();
 	}
 }

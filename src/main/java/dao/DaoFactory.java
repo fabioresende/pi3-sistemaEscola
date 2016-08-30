@@ -1,25 +1,33 @@
 package dao;
 
-import dao.impl.CidadeDaoImpl;
-import dao.impl.HotelDaoImpl;
-import dao.impl.PacoteDaoImpl;
-import dao.impl.RestauranteDaoImpl;
+import dao.impl.AlunoDaoImpl;
+import dao.impl.AvaliacaoDaoImpl;
+import dao.impl.CursoDaoImpl;
+import dao.impl.MatriculaDaoImpl;
+import dao.impl.ResultadoDaoImpl;
+import dao.impl.TurmaDaoImpl;
 
 public class DaoFactory {
 
-	public static CidadeDao criarCidadeDao() {
-		return new CidadeDaoImpl();
+	public static AlunoDao criarAlunoDao() {
+		return new AlunoDaoImpl();
 	}
 
-	public static HotelDao criarHotelDao() {
-		return new HotelDaoImpl();
+	public static AvaliacaoDao criarAvaliacaoDao() {
+		return new AvaliacaoDaoImpl();
 	}
 
-	public static PacoteDao criarPacoteDao() {
-		return new PacoteDaoImpl();
+	public static CursoDao criarCursoDao() {
+		return new CursoDaoImpl();
 	}
 
-	public static RestauranteDao criarRestauranteDao() {
-		return new RestauranteDaoImpl();
+	public static MatriculaDao criarMatriculaDao() {
+		return new MatriculaDaoImpl();
+	}
+	public static ResultadoDao criarResultadoDao() {
+		return new ResultadoDaoImpl();
+	}
+	public static TurmaDao criarTurmaDao() {
+		return new TurmaDaoImpl();
 	}
 }

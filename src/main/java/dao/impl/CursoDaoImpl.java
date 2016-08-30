@@ -5,40 +5,40 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import dao.HotelDao;
-import dominio.Hotel;
+import dao.CursoDao;
+import dominio.Curso;
 
-public class HotelDaoImpl implements HotelDao {
+public class CursoDaoImpl implements CursoDao {
 
 	private EntityManager em;
 
-	public HotelDaoImpl() {
+	public CursoDaoImpl() {
 		this.em = EM.getLocalEm();
 	}
 	
 	@Override
-	public void inserirAtualizar(Hotel x) {
-		if (x.getCodHotel() != null) {
+	public void inserirAtualizar(Curso x) {
+		if (x.getCodCurso() != null) {
 			x = em.merge(x);
 		}
 		em.persist(x);
 	}
 
 	@Override
-	public void excluir(Hotel x) {
+	public void excluir(Curso x) {
 		x = em.merge(x);
 		em.remove(x);
 	}
 
 	@Override
-	public Hotel buscar(int cod) {
-		return em.find(Hotel.class, cod);
+	public Curso buscar(int cod) {
+		return em.find(Curso.class, cod);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Hotel> buscarTodos() {
-		String jpql = "SELECT x FROM Hotel x";
+	public List<Curso> buscarTodos() {
+		String jpql = "SELECT x FROM Curso x";
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
