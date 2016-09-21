@@ -39,6 +39,8 @@ public class Instanciacao extends HttpServlet {
 			
 			Turma t1 = new Turma(null, sdf.parse("20/10/2015"),30,true,c1);
 			Turma t2 = new Turma(null, sdf.parse("01/02/2014"),40,false,c2);
+			Turma t3 = new Turma(null, sdf.parse("25/10/2015"),30,true,c1);
+			Turma t4 = new Turma(null, sdf.parse("05/02/2014"),40,false,c2);
 			
 		    Aluno a1 = new Aluno(null,"Aluno1","12345678900","(34)0000-0000",sdf.parse("20/02/2015"),"email@.com",new BigDecimal("700.00"));
 		    Aluno a2 = new Aluno(null,"Aluno2","12345678902","(34)0000-0002",sdf.parse("23/03/2015"),"email2@.com",new BigDecimal("800.00"));

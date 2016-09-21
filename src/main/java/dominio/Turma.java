@@ -173,12 +173,9 @@ public class Turma implements Serializable{
 	public Double notaMedia(){
 		Double media = 0.0;
 		int x = 0;
-		for(Avaliacao a:avaliacoes){
-			List<Resultado> resultados = a.getResultados();
-			for(Resultado r: resultados){
-				media = media + r.getNota();
-				x++;
-			}
+		for(Matricula m:matriculas){
+			media = media + m.notaTotal();
+			x++;
 		}
 		media = media/x;
 		return media;

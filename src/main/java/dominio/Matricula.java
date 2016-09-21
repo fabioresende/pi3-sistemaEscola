@@ -149,7 +149,7 @@ public class Matricula implements Serializable{
 			soma = soma + r.getAvaliacao().getPontuacao();
 		}
 		soma = soma*70/100;
-		if(this.notaTotal()>soma){
+		if(this.notaTotal()>=soma){
 			resultado = true;
 		}
 		return resultado;
