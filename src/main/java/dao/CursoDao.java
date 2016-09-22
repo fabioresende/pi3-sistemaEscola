@@ -10,4 +10,5 @@ public interface CursoDao {
 	public void excluir(Curso x);
 	public Curso buscar(int cod);
 	public List<Curso> buscarTodos();
+	public List<Curso> buscarPorNome(String nome,Double precoMinimo,Double precoMaximo);
 } 

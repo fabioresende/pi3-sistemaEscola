@@ -34,4 +34,9 @@ public class CursoServico {
 	public List<Curso> buscarTodos() {
 		return dao.buscarTodos();
 	}
+	
+	public List<Curso> buscarPorNome(String nome,Double precoMinimo,Double precoMaximo){
+		return dao.buscarPorNome(nome,precoMinimo,precoMaximo);
+	}
+
 }

@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import dao.TurmaDao;
+import dominio.Curso;
 import dominio.Turma;
 
 public class TurmaDaoImpl implements TurmaDao {
@@ -40,6 +41,14 @@ public class TurmaDaoImpl implements TurmaDao {
 	public List<Turma> buscarTodos() {
 		String jpql = "SELECT x FROM Turma x";
 		Query query = em.createQuery(jpql);
+		return query.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Turma> buscarTurmasNaoFinalizadas(Curso curso){
+		String jqpl = "Select x from Curso x where x.nome like :p1 and x.preco>:p2 and x.preco<:p3";
+		Query query = em.createQuery(jqpl);
 		return query.getResultList();
 	}
 }

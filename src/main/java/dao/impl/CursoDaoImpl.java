@@ -42,4 +42,17 @@ public class CursoDaoImpl implements CursoDao {
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Curso> buscarPorNome(String nome,Double precoMinimo,Double precoMaximo){
+		String jqpl = "Select x from Curso x where x.nome like :p1 and x.preco>:p2 and x.preco<:p3";
+		Query query = em.createQuery(jqpl);
+		query.setParameter("p1", "%"+nome+"%");
+		query.setParameter("p2", precoMinimo);
+		query.setParameter("p3", precoMaximo);
+		List<Curso> cursos = query.getResultList();
+		return (cursos.size()>0)? cursos :null;
+		
+	}
 }

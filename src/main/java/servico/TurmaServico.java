@@ -5,6 +5,7 @@ import java.util.List;
 import dao.TurmaDao;
 import dao.DaoFactory;
 import dao.impl.EM;
+import dominio.Curso;
 import dominio.Turma;
 
 public class TurmaServico {
@@ -33,5 +34,8 @@ public class TurmaServico {
 	
 	public List<Turma> buscarTodos() {
 		return dao.buscarTodos();
+	}
+	public List<Turma> buscarTurmasNaoFinalizadas(Curso curso){
+		return dao.buscarTurmasNaoFinalizadas(curso);
 	}
 }
