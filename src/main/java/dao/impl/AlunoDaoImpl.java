@@ -42,4 +42,22 @@ public class AlunoDaoImpl implements AlunoDao {
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Aluno> buscarAlunosOrderNome(){
+		String jpql = "SELECT x FROM Aluno x ORDER BY x.nome";
+		Query query = em.createQuery(jpql);
+		return query.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Aluno buscarNomeExato(String nome){
+		String jpql = "SELECT x FROM Aluno x WHERE x.nome = :p1";
+		Query query = em.createQuery(jpql);
+		query.setParameter("p1", nome);
+		List<Aluno> aux = query.getResultList();
+		return (aux.size() > 0) ? aux.get(0) : null;
+	}
 }
