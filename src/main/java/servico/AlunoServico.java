@@ -58,4 +58,7 @@ public class AlunoServico {
 	public List<Aluno> buscarAlunosOrderNome(){
 		return dao.buscarAlunosOrderNome();
 	}
+	public List<Aluno> buscarPorTrecho(String trecho){
+		return dao.buscarPorTrecho(trecho);
+	}
 }
