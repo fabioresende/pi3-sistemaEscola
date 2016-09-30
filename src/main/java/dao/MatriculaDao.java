@@ -10,4 +10,5 @@ public interface MatriculaDao {
 	public void excluir(Matricula x);
 	public Matricula buscar(int cod);
 	public List<Matricula> buscarTodos();
+	public Matricula buscarCodigoExato(int cod);
 } 

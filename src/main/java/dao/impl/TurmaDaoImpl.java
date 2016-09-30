@@ -47,8 +47,9 @@ public class TurmaDaoImpl implements TurmaDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Turma> buscarTurmasNaoFinalizadas(Curso curso){
-		String jqpl = "Select x from Curso x where x.nome like :p1 and x.preco>:p2 and x.preco<:p3";
+		String jqpl = "Select x from Turma x where x.curso = :p1";
 		Query query = em.createQuery(jqpl);
+		query.setParameter("p1",curso);
 		return query.getResultList();
 	}
 }

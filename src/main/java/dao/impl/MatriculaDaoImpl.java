@@ -23,7 +23,13 @@ public class MatriculaDaoImpl implements MatriculaDao {
 		}
 		em.persist(x);
 	}
-
+	public Matricula buscarCodigoExato(int cod){
+		String jpql = "Select x from Matricula x where x.codMatricula = :p1";
+		Query query = em.createNamedQuery(jpql);
+		query.setParameter("p1",cod);
+		List<Matricula> aux = query.getResultList();
+		return (aux.size() > 0)?aux.get(0):null;
+	}
 	@Override
 	public void excluir(Matricula x) {
 		x = em.merge(x);
