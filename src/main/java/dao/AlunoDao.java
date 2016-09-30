@@ -11,6 +11,6 @@ public interface AlunoDao {
 	public Aluno buscar(int cod);
 	public List<Aluno> buscarTodos();
 	public List<Aluno> buscarAlunosOrderNome();
-	public Aluno buscarNomeExato(String nome);
+	public Aluno buscarCpfExato(String cpf);
 	public List<Aluno> buscarPorTrecho(String trecho);
 } 

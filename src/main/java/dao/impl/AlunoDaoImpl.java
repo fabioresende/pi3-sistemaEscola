@@ -53,10 +53,10 @@ public class AlunoDaoImpl implements AlunoDao {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public Aluno buscarNomeExato(String nome){
-		String jpql = "SELECT x FROM Aluno x WHERE x.nome = :p1";
+	public Aluno buscarCpfExato(String cpf){
+		String jpql = "SELECT x FROM Aluno x WHERE x.cpf = :p1";
 		Query query = em.createQuery(jpql);
-		query.setParameter("p1", nome);
+		query.setParameter("p1", cpf);
 		List<Aluno> aux = query.getResultList();
 		return (aux.size() > 0) ? aux.get(0) : null;
 	}
