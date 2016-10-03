@@ -47,9 +47,26 @@ public class TurmaDaoImpl implements TurmaDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Turma> buscarTurmasNaoFinalizadas(Curso curso){
+		String jqpl = "Select x from Turma x where x.curso = :p1 and x.finalizada = :p2";
+		Query query = em.createQuery(jqpl);
+		query.setParameter("p1",curso);
+		query.setParameter("p2",false);
+		return query.getResultList();
+	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Turma> buscarTurmasCurso(Curso curso){
 		String jqpl = "Select x from Turma x where x.curso = :p1";
 		Query query = em.createQuery(jqpl);
 		query.setParameter("p1",curso);
+		return query.getResultList();
+	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Turma> buscarTurmaPorDataIn(String data){
+		String jqpl = "Select x from Turma x where x.datainicio = :p1";
+		Query query = em.createQuery(jqpl);
+		query.setParameter("p1",data);
 		return query.getResultList();
 	}
 }
