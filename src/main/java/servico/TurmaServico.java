@@ -4,6 +4,7 @@ import java.util.List;
 
 import dao.TurmaDao;
 import dao.DaoFactory;
+import dao.Transaction;
 import dao.impl.EM;
 import dominio.Curso;
 import dominio.Turma;

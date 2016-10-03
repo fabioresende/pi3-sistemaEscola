@@ -22,6 +22,7 @@ import servico.AvaliacaoServico;
 import servico.CursoServico;
 import servico.MatriculaServico;
 import servico.ResultadoServico;
+import servico.ServicoException;
 import servico.TurmaServico;
 
 @WebServlet("/Instanciacao")
@@ -84,8 +85,8 @@ public class Instanciacao extends HttpServlet {
 			MatriculaServico ms = new MatriculaServico();
 			ResultadoServico rs = new ResultadoServico();
 			
-			cs.inserirAtualizar(c1);
-			cs.inserirAtualizar(c2);
+			cs.inserir(c1);
+			cs.inserir(c2);
 			
 			ts.inserirAtualizar(t1);
 			ts.inserirAtualizar(t2);
@@ -128,6 +129,9 @@ public class Instanciacao extends HttpServlet {
 
 		} catch (ParseException e) {
 			response.getWriter().append(e.getMessage());
+		} catch (ServicoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
