@@ -10,4 +10,7 @@ public interface AlunoDao {
 	public void excluir(Aluno x);
 	public Aluno buscar(int cod);
 	public List<Aluno> buscarTodos();
+	public List<Aluno> buscarAlunosOrderNome();
+	public Aluno buscarCpfExato(String cpf);
+	public List<Aluno> buscarPorTrecho(String trecho);
 } 
