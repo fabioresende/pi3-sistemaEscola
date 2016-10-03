@@ -34,4 +34,11 @@ public class CursoServico {
 	public List<Curso> buscarTodos() {
 		return dao.buscarTodos();
 	}
+	public List<Curso> buscarCursosOrderNome() {
+		return dao.buscarCursosOrderNome();
+	}
+
+	public List<Curso> buscarPorTrecho(String trecho) {
+		return dao.buscarPorTrecho(trecho);
+	}
 }

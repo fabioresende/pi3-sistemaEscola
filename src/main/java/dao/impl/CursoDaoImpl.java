@@ -42,4 +42,30 @@ public class CursoDaoImpl implements CursoDao {
 		Query query = em.createQuery(jpql);
 		return query.getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Curso> buscarCursosOrderNome(){
+		String jpql = "SELECT x FROM Curso x ORDER BY x.nome";
+		Query query = em.createQuery(jpql);
+		return query.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Curso buscarCpfExato(String cpf){
+		String jpql = "SELECT x FROM Curso x WHERE x.cpf = :p1";
+		Query query = em.createQuery(jpql);
+		query.setParameter("p1", cpf);
+		List<Curso> aux = query.getResultList();
+		return (aux.size() > 0) ? aux.get(0) : null;
+	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Curso> buscarPorTrecho(String trecho){
+		String jpql = "SELECT x FROM Curso x LIKE :p1";
+		Query query = em.createQuery(jpql);
+		query.setParameter("p1", "%"+trecho+"%");
+		return query.getResultList();
+	}
 }
