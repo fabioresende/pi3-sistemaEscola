@@ -53,10 +53,10 @@ public class CursoDaoImpl implements CursoDao {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public Curso buscarCpfExato(String cpf){
-		String jpql = "SELECT x FROM Curso x WHERE x.cpf = :p1";
+	public Curso buscarNomeExato(String nome){
+		String jpql = "SELECT x FROM Curso x WHERE x.nome = :p1";
 		Query query = em.createQuery(jpql);
-		query.setParameter("p1", cpf);
+		query.setParameter("p1", nome);
 		List<Curso> aux = query.getResultList();
 		return (aux.size() > 0) ? aux.get(0) : null;
 	}

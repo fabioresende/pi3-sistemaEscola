@@ -11,6 +11,6 @@ public interface CursoDao {
 	public Curso buscar(int cod);
 	public List<Curso> buscarTodos();
 	public List<Curso> buscarCursosOrderNome();
-	public Curso buscarCpfExato(String cpf);
+	public Curso buscarNomeExato(String nome);
 	public List<Curso> buscarPorTrecho(String trecho);
 } 
