@@ -4,7 +4,9 @@ import java.util.List;
 
 import dao.CursoDao;
 import dao.DaoFactory;
+import dao.Transaction;
 import dao.impl.EM;
+import dominio.Curso;
 import dominio.Curso;
 
 public class CursoServico {
@@ -15,11 +17,43 @@ public class CursoServico {
 		dao = DaoFactory.criarCursoDao();
 	}
 	
-	public void inserirAtualizar(Curso x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.inserirAtualizar(x);
-		EM.getLocalEm().getTransaction().commit();
+	public void inserir(Curso x) throws ServicoException {
+		try {
+			Curso aluno = dao.buscarNomeExato(x.getNome());
+			if (aluno != null) {
+				throw new ServicoException("Já existe um aluno com esse cpf!", 1);
+			}
+			Transaction.begin();
+			dao.inserirAtualizar(x);
+			Transaction.commit();
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
+
 	}
+
+	public void atualizar(Curso x) throws ServicoException {
+		Curso aluno = dao.buscarNomeExato(x.getNome());
+		if (aluno != null) {
+			throw new ServicoException("Já existe um aluno com esse cpf!", 1);
+		}
+
+		try {
+			Transaction.begin();
+			dao.inserirAtualizar(x);
+			Transaction.commit();
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
+	}
+	
+	
 	
 	public void excluir(Curso x) {
 		EM.getLocalEm().getTransaction().begin();
