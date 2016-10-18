@@ -1,5 +1,6 @@
 package servico;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import dao.CursoDao;
@@ -69,7 +70,7 @@ public class CursoServico {
 		return dao.buscarTodos();
 	}
 
-	public List<Curso> buscarPorNome(String nome,Double precoMinimo,Double precoMaximo){
+	public List<Curso> buscarPorNome(String nome,BigDecimal precoMinimo,BigDecimal precoMaximo){
 		return dao.buscarPorNome(nome,precoMinimo,precoMaximo);
 	}
 
