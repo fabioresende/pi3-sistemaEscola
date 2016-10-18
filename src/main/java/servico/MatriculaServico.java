@@ -18,11 +18,6 @@ public class MatriculaServico {
 		dao = DaoFactory.criarMatriculaDao();
 	}
 	
-	public void inserirAtualizar(Matricula x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.inserirAtualizar(x);
-		EM.getLocalEm().getTransaction().commit();
-	}
 	public void inserir(Matricula x) throws ServicoException{
 		try{
 			Matricula aux = dao.buscarCodigoExato(x.getCodMatricula());

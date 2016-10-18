@@ -76,6 +76,7 @@ public class Instanciacao extends HttpServlet {
 		    Matricula m16 = new Matricula(null,sdf.parse("23/02/2015"),7,a8,t4);
 		    
 		    
+		    
 		    Avaliacao av1 = new Avaliacao(null,10.0,sdf.parse("20/03/2015"),t1);
 		    Avaliacao av2 = new Avaliacao(null,20.0,sdf.parse("20/04/2015"),t2);
 		    
@@ -104,26 +105,26 @@ public class Instanciacao extends HttpServlet {
 			ts.inserirAtualizar(t2);
 			
 			
-			as.inserirAtualizar(a1);
-			as.inserirAtualizar(a2);
-			as.inserirAtualizar(a3);
-			as.inserirAtualizar(a4);
-			as.inserirAtualizar(a5);
-			as.inserirAtualizar(a6);
-			as.inserirAtualizar(a7);
-			as.inserirAtualizar(a8);			
-			as.inserirAtualizar(a9);
-			as.inserirAtualizar(a10);
+			as.inserir(a1);
+			as.inserir(a2);
+			as.inserir(a3);
+			as.inserir(a4);
+			as.inserir(a5);
+			as.inserir(a6);
+			as.inserir(a7);
+			as.inserir(a8);			
+			as.inserir(a9);
+			as.inserir(a10);
 			
 			
-			ms.inserirAtualizar(m1);
-			ms.inserirAtualizar(m2);
-			ms.inserirAtualizar(m3);
-			ms.inserirAtualizar(m4);
-			ms.inserirAtualizar(m5);
-			ms.inserirAtualizar(m6);
-			ms.inserirAtualizar(m7);
-			ms.inserirAtualizar(m8);
+			ms.inserir(m1);
+			ms.inserir(m2);
+			ms.inserir(m3);
+			ms.inserir(m4);
+			ms.inserir(m5);
+			ms.inserir(m6);
+			ms.inserir(m7);
+			ms.inserir(m8);
 			
 			avs.inserirAtualizar(av1);
 			avs.inserirAtualizar(av2);

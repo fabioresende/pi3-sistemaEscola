@@ -16,12 +16,6 @@ public class AlunoServico {
 		dao = DaoFactory.criarAlunoDao();
 	}
 
-	public void inserirAtualizar(Aluno x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.inserirAtualizar(x);
-		EM.getLocalEm().getTransaction().commit();
-	}
-
 	public void inserir(Aluno x) throws ServicoException {
 		try {
 			Aluno aluno = dao.buscarCpfExato(x.getCpf());
