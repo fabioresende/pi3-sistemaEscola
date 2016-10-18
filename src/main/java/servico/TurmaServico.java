@@ -1,5 +1,6 @@
 package servico;
 
+import java.util.Date;
 import java.util.List;
 
 import dao.TurmaDao;
@@ -67,7 +68,7 @@ public class TurmaServico {
 	public List<Turma> buscarTurmasCurso(Curso curso){
 		return dao.buscarTurmasCurso(curso);
 	}
-	public List<Turma> buscarTurmaPorDataIn(String data) {
+	public List<Turma> buscarTurmaPorDataIn(Date data) {
 		return dao.buscarTurmaPorDataIn(data);
 	}
 }

@@ -63,6 +63,18 @@ public class Instanciacao extends HttpServlet {
 		    Matricula m6 = new Matricula(null,sdf.parse("21/02/2015"),9,a6,t2);
 		    Matricula m7 = new Matricula(null,sdf.parse("22/02/2015"),8,a7,t2);
 		    Matricula m8 = new Matricula(null,sdf.parse("23/02/2015"),7,a8,t2);
+	
+		    
+		    Matricula m9 = new Matricula(null,sdf.parse("20/02/2015"),6,a1,t3);
+		    Matricula m10 = new Matricula(null,sdf.parse("21/02/2015"),7,a2,t3);
+		    Matricula m11 = new Matricula(null,sdf.parse("22/02/2015"),8,a3,t3);
+		    Matricula m12 = new Matricula(null,sdf.parse("23/02/2015"),9,a4,t3);
+		    
+		    Matricula m13 = new Matricula(null,sdf.parse("20/02/2015"),10,a5,t4);
+		    Matricula m14 = new Matricula(null,sdf.parse("21/02/2015"),9,a6,t4);
+		    Matricula m15 = new Matricula(null,sdf.parse("22/02/2015"),8,a7,t4);
+		    Matricula m16 = new Matricula(null,sdf.parse("23/02/2015"),7,a8,t4);
+		    
 		    
 		    Avaliacao av1 = new Avaliacao(null,10.0,sdf.parse("20/03/2015"),t1);
 		    Avaliacao av2 = new Avaliacao(null,20.0,sdf.parse("20/04/2015"),t2);

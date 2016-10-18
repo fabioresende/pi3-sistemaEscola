@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.Date;
 import java.util.List;
 
 import dominio.Curso;
@@ -13,5 +14,5 @@ public interface TurmaDao {
 	public List<Turma> buscarTodos();
 	public List<Turma> buscarTurmasNaoFinalizadas(Curso curso);
 	public List<Turma> buscarTurmasCurso(Curso curso);
-	public List<Turma> buscarTurmaPorDataIn(String data);
+	public List<Turma> buscarTurmaPorDataIn(Date data);
 } 

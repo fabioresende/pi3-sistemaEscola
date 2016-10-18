@@ -1,5 +1,6 @@
 package dao.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -63,7 +64,7 @@ public class TurmaDaoImpl implements TurmaDao {
 	}
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Turma> buscarTurmaPorDataIn(String data){
+	public List<Turma> buscarTurmaPorDataIn(Date data){
 		String jqpl = "Select x from Turma x where x.datainicio = :p1";
 		Query query = em.createQuery(jqpl);
 		query.setParameter("p1",data);
