@@ -18,10 +18,10 @@
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
-        <h1>Página inicial</h1>
+        <h1>Titulo da página</h1>
       </div>
-      <p class="lead">Sistema Java para escola</p>
-      <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+      <p class="lead">Texto grande</p>
+      <p>navbar.</p>
     </div>
 
     <jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
