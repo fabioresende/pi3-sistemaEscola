@@ -74,7 +74,7 @@ public class CursoDaoImpl implements CursoDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Curso> buscarPorTrecho(String trecho){
-		String jpql = "SELECT x FROM Curso x LIKE :p1";
+		String jpql = "SELECT x FROM Curso x where x.nome LIKE :p1";
 		Query query = em.createQuery(jpql);
 		query.setParameter("p1", "%"+trecho+"%");
 		return query.getResultList();

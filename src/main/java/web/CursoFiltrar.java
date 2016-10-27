@@ -12,15 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import dominio.Curso;
 import servico.CursoServico;
 
-@WebServlet("/curso/listar")
-public class CursoListar extends HttpServlet{
+@WebServlet("/curso/filtrar")
+public class CursoFiltrar extends HttpServlet{
 	private static final long serialVersionVID = 1l;
 	
 	private static String DESTINO = "/curso/listar.jsp";
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
 		CursoServico cs = new CursoServico();
-		List<Curso> itens = cs.buscarCursosOrderNome();
+		String nome = request.getParameter("busca");
+		List<Curso> itens = cs.buscarPorTrecho(nome);
 		request.setAttribute("itens", itens);
 		request.getRequestDispatcher(DESTINO).forward(request, response);
 	}
