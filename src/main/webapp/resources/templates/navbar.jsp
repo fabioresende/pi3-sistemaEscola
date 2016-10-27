@@ -13,7 +13,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="<%=request.getContextPath() %>/curso/listar">Cadastro de Cursos</a></li>
-            <li><a href="<%=request.getContextPath() %>/turma/listar">Cadastro de Turmas</a></li>
+            <li><a href="<%=request.getContextPath() %>/turma/cursos">Cadastro de Turmas</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
