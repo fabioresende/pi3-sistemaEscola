@@ -14,21 +14,14 @@ import dominio.Turma;
 import servico.CursoServico;
 import servico.TurmaServico;
 
-@WebServlet("/turma/listar")
-public class TurmaListar extends HttpServlet{
+@WebServlet("/turma/inserir")
+public class TurmaInserir extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
-	private static String DESTINO = "/turma/listar.jsp";
+	private static String DESTINO = "/turma/formInserir.jsp";
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
-		TurmaServico ts= new TurmaServico(); 
-		CursoServico cs= new CursoServico();
-		
-		int cod = Integer.parseInt(request.getParameter("cod"));
 
-		Curso curso = cs.buscar(cod);
-		List<Turma> itens = ts.buscarTurmasNaoFinalizadas(curso);
-	    request.setAttribute("itens",itens);
-	    request.setAttribute("curso",curso);
+	    request.setAttribute("itens",new Turma());
 	    request.getRequestDispatcher(DESTINO).forward(request,response);
 	}
 }

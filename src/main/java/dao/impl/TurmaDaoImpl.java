@@ -63,10 +63,10 @@ public class TurmaDaoImpl implements TurmaDao {
 	}
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Turma> buscarTurmaPorDataIn(String data){
-		String jqpl = "Select x from Turma x where x.datainicio = :p1";
+	public List<Turma> buscarTurmaPorVagas(int vagas){
+		String jqpl = "Select x from Turma x where x.numeroDeVagas = :p1";
 		Query query = em.createQuery(jqpl);
-		query.setParameter("p1",data);
+		query.setParameter("p1",vagas);
 		return query.getResultList();
 	}
 }

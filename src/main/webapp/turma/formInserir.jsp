@@ -25,21 +25,6 @@
 		<div class="page-header">
 			<h1>Turmas de ${curso.nome}</h1>
 		</div>
-		<div class="row">
-			<div class="col-sm-2">
-				<form class="navbar-form" action="<%=request.getContextPath()%>/turma/inserir">
-					<button type="submit" class="btn btn-primary">Inserir</button>
-				</form>
-			</div>
-			<div class="col-sm-6">
-				<form class="navbar-form" action="<%=request.getContextPath()%>/turma/filtrar">
-					<div class="form-group">
-						<input type="text" name="busca" placeholder="Digite uma data" class="form-control" />
-					</div>
-					<button type="submit" class="btn btn-success">Filtrar</button>
-				</form>
-			</div>
-		</div>
 		<div>
 			<table class="table">
 				<thead>
@@ -55,11 +40,9 @@
 							<td>${x.codTurma}</td>
 							<td>${x.datainicio}</td>
 							<td>${x.numeroDeVagas}</td>
-							<td><a
-								href="<%=request.getContextPath()%>/turma/editar?cod=${x.codTurma}"
-								class="btn btn-primary btn-xs">Editar</a> <a
-								href="<%=request.getContextPath()%>/turma/excluir?cod=${x.codTurma}"
-								class="btn btn-danger btn-xs">Excluir</a></td>
+							<td><a href="<%=request.getContextPath()%>/turma/editar?cod=${x.codTurma}" class="btn btn-primary btn-xs">Editar</a>
+								<a href="<%=request.getContextPath()%>/turma/listar?cod=${x..codTurma}" class="btn btn-danger btn-xs">Excluir</a>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

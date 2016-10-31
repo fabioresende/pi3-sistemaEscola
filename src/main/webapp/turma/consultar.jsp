@@ -34,7 +34,7 @@
 			<div class="col-sm-6">
 				<form class="navbar-form" action="<%=request.getContextPath()%>/turma/filtrar">
 					<div class="form-group">
-						<input type="text" name="busca" placeholder="Digite uma data" class="form-control" />
+						<input type="text" name="busca" placeholder="Digite o numero de vagas" class="form-control" />
 					</div>
 					<button type="submit" class="btn btn-success">Filtrar</button>
 				</form>
@@ -53,7 +53,7 @@
 					<c:forEach items="${itens}" var="x">
 						<tr>
 							<td>${x.codTurma}</td>
-							<td>${x.datainicio}</td>
+							<td><fmt:formatDate type="date" pattern="dd/MM/yyyy" value="${x.datainicio}"/></td>
 							<td>${x.numeroDeVagas}</td>
 							<td><a
 								href="<%=request.getContextPath()%>/turma/editar?cod=${x.codTurma}"

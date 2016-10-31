@@ -13,5 +13,5 @@ public interface TurmaDao {
 	public List<Turma> buscarTodos();
 	public List<Turma> buscarTurmasNaoFinalizadas(Curso curso);
 	public List<Turma> buscarTurmasCurso(Curso curso);
-	public List<Turma> buscarTurmaPorDataIn(String data);
+	public List<Turma> buscarTurmaPorVagas(int vagas);
 } 

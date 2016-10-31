@@ -14,8 +14,8 @@ import dominio.Turma;
 import servico.CursoServico;
 import servico.TurmaServico;
 
-@WebServlet("/turma/listar")
-public class TurmaListar extends HttpServlet{
+@WebServlet("/turma/editar")
+public class TurmaEditar extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
 	private static String DESTINO = "/turma/listar.jsp";

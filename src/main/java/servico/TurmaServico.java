@@ -67,7 +67,7 @@ public class TurmaServico {
 	public List<Turma> buscarTurmasCurso(Curso curso){
 		return dao.buscarTurmasCurso(curso);
 	}
-	public List<Turma> buscarTurmaPorDataIn(String data) {
-		return dao.buscarTurmaPorDataIn(data);
+	public List<Turma> buscarTurmaPorVagas(int vagas) {
+		return dao.buscarTurmaPorVagas(vagas);
 	}
 }
