@@ -23,31 +23,34 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Turmas de ${curso.nome}</h1>
+			<h1>Inserir nova Turma</h1>
 		</div>
-		<div>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Código</th>
-						<th>Início</th>
-						<th>Quantidade de Vagas</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${itens}" var="x">
-						<tr>
-							<td>${x.codTurma}</td>
-							<td>${x.datainicio}</td>
-							<td>${x.numeroDeVagas}</td>
-							<td><a href="<%=request.getContextPath()%>/turma/editar?cod=${x.codTurma}" class="btn btn-primary btn-xs">Editar</a>
-								<a href="<%=request.getContextPath()%>/turma/listar?cod=${x..codTurma}" class="btn btn-danger btn-xs">Excluir</a>
-							</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</div>
+		<form name="myform" class="form-horizontal"
+			action="<%=request.getContextPath()%>/turma/inserir">
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label" for="datainicio">Data
+					de início:</label>
+				<div>
+					<input type="date" name="datainicio" id="datainicio"
+						value='<fmt:formatDate pattern="dd/MM/yyyy" value="${item.datainicio}"/>' />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label" for="numeroDevagas">Numero de vagas:</label>
+				<div>
+					<input type="number" name="numeroDeVagas" id="numeroDeVagas"
+						value="${item.numeroDeVagas}" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-12">
+					<button type="submit" class="btn btn-primary">Inserir</button>
+					<a href="<%=request.getContextPath()%>/turma/listar?cod=${cod}" 
+					class="btn btn-default">Voltar</a>	
+				</div>
+			</div>
+		</form>
 	</div>
 
 	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>

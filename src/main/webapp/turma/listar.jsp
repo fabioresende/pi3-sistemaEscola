@@ -27,8 +27,9 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-2">
-				<form class="navbar-form" action="<%=request.getContextPath()%>/turma/inserir">
+				<form class="navbar-form" action="<%=request.getContextPath()%>/turma/novaTurma" method="post">
 					<button type="submit" class="btn btn-primary">Inserir</button>
+					<input type="hidden" name="cod" value="${curso.codCurso}">
 				</form>
 			</div>
 			<div class="col-sm-6">

@@ -14,14 +14,19 @@ import dominio.Turma;
 import servico.CursoServico;
 import servico.TurmaServico;
 
-@WebServlet("/turma/inserir")
+@WebServlet("/turma/novaTurma")
 public class TurmaInserir extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
 	private static String DESTINO = "/turma/formInserir.jsp";
-	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
-
-	    request.setAttribute("itens",new Turma());
+	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
+		CursoServico cs = new CursoServico();
+		Turma t = new Turma();
+		Integer cod = Integer.parseInt(request.getParameter("cod"));
+		Curso c = cs.buscar(cod);
+		t.setCurso(c);
+	    request.setAttribute("item",t);
+	    request.setAttribute("cod",cod);
 	    request.getRequestDispatcher(DESTINO).forward(request,response);
 	}
 }
