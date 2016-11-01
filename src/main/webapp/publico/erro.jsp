@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="ISO-8859-1">
 
     <title>Sistema de Escola</title>
     <link href="<%=request.getContextPath() %>/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,7 @@
       <div class="page-header">
         <h1>Erro!</h1>
       </div>
-      <p class="lead">${erro}</p>
+      <p class="lead">${msg}</p>
     </div>
 
     <jsp:include page="/resources/templates/rodape.jsp"></jsp:include>

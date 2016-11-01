@@ -19,10 +19,10 @@ public class CursoInserir extends HttpServlet{
 	
 	private static String DESTINO = "/curso/listar.jsp";
 	private static String ERRO = "/publico/erro.jsp";
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
 		CursoServico cs = new CursoServico();
-		Curso x = new Curso();
+		Curso x = Instanciar.curso(request);
 		try {
 			cs.inserir(x);
 			List<Curso> itens = cs.buscarCursosOrderNome();

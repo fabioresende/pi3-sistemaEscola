@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="ISO-8859-1">
 
     <title>Sistema de Escola</title>
     <link href="<%=request.getContextPath() %>/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
-        <h1>PÃ¡gina inicial</h1>
+        <h1>Página inicial</h1>
       </div>
       <p class="lead">Sistema Java para escola</p>
       <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>

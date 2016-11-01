@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 
 <title>Sistema de Escola</title>
 <link
@@ -44,11 +44,12 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>CÃ³digo</th>
+					<th>Código</th>
 					<th>Nome</th>
-					<th>PreÃ§o</th>
-					<th>PontuaÃ§Ã£o</th>
-					<th>AÃ§Ã£o</th>
+					<th>Preço</th>
+					<th>Pontuação</th>
+					<th>Carga Horária</th>
+					<th>Ação</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -58,6 +59,7 @@
 						<td>${x.nome}</td>
 						<td><fmt:setLocale value="pt_BR"/><fmt:formatNumber type="currency" value="${x.preco}"/></td>
 						<td>${x.pontuacao}</td>
+						<td>${x.cargaHoraria}</td>
 						<td>
 							<a href="<%=request.getContextPath()%>/curso/editar?cod=${x.codCurso}" class="btn btn-primary btn-xs">Editar</a>
 							<a href="<%=request.getContextPath()%>/curso/remover?cod=${x.codCurso}" class="btn btn-danger btn-xs">Excluir</a>

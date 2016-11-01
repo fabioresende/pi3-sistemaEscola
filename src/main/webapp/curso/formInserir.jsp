@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="ISO-8859-1">
 
     <title>Sistema de Escola</title>
     <link href="<%=request.getContextPath() %>/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -18,11 +18,11 @@
     <!-- Begin page content -->
     <div class="container">
       <div class="page-header">
-        <h1>Titulo da p√°gina</h1>
+        <h1>Inserir Novo Curso</h1>
       </div>
       
       
-      <form name="myform" class="form-horizontal" 
+      <form method="post" name="myform" class="form-horizontal" 
       	action="<%=request.getContextPath()%>/curso/inserir">
       
       	<div class="form-group">
@@ -33,18 +33,26 @@
       	</div>
       	
       	<div class="form-group">
-      		<label class="col-sm-2 control-label" for="preco">Pre√ßo:</label>
+      		<label class="col-sm-2 control-label" for="preco">PreÁo:</label>
       		<div class="col-sm-5">
       			<input type="text" name="preco" id="preco" value="${item.preco}" required="required" class="form-control"/>
       		</div>
       	</div>
       	
       	<div class="form-group">
-      		<label class="col-sm-2 control-label" for="pontuacao">Pontua√ß√£o:</label>
+      		<label class="col-sm-2 control-label" for="pontuacao">PontuaÁ„o:</label>
       		<div class="col-sm-5">
       			<input type="text" name="pontuacao" id="pontuacao" value="${item.pontuacao}" required="required" class="form-control"/>
       		</div>
       	</div>
+      	
+      	<div class="form-group">
+      		<label class="col-sm-2 control-label" for="cargaHoraria">Carga Hor·ria:</label>
+      		<div class="col-sm-5">
+      			<input type="text" name="cargaHoraria" id="cargaHoraria" value="${item.cargaHoraria}" required="required" class="form-control"/>
+      		</div>
+      	</div>
+      	
       	
       	<div class="form-group">
       		<div class="col-sm-offset-2 col-sm-10">

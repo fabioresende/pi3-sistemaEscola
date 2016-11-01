@@ -15,7 +15,11 @@ public class Instanciar {
 
 		c = request.getParameter("codCurso");
 		if (c != null && !c.isEmpty()) {
-			aux.setCodCurso(Integer.parseInt(c));
+			try {
+				aux.setCodCurso(Integer.parseInt(c));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
 		}
 
 		c = request.getParameter("nome");
@@ -25,14 +29,33 @@ public class Instanciar {
 
 		c = request.getParameter("preco");
 		if (c != null && !c.isEmpty()) {
-			aux.setPreco(new BigDecimal(c));
+			try {
+				aux.setPreco(new BigDecimal(c));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
 		}
 
 		c = request.getParameter("pontuacao");
 		if (c != null && !c.isEmpty()) {
-			aux.setPontuacao(Double.parseDouble(c));
+			try {
+				aux.setPontuacao(Double.parseDouble(c));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
 		}
-
+		
+		c = request.getParameter("cargaHoraria");
+		if (c != null && !c.isEmpty()) {
+			try {
+				aux.setCargaHoraria(Integer.parseInt(c));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		return aux;
 	}
 
 }
