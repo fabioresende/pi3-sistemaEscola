@@ -17,11 +17,22 @@ public class TurmaServico {
 		dao = DaoFactory.criarTurmaDao();
 	}
 	
-	public void inserirAtualizar(Turma x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.inserirAtualizar(x);
-		EM.getLocalEm().getTransaction().commit();
-	}
+	public void inserir(Turma x) throws ServicoException{
+		try {
+			Turma turma = dao.buscar(x.getCodTurma());
+			if (turma != null) {
+				throw new ServicoException("Ja existe uma turma com esse código!", 1);
+			}
+			Transaction.begin();
+			dao.inserirAtualizar(x);
+			Transaction.commit();
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
+	}	
 	public void atualizar(Turma x) throws ServicoException {
 		Turma turma = dao.buscar(x.getCodTurma());
 		if (turma != null) {

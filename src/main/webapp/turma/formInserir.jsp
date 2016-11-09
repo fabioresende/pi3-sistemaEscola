@@ -26,18 +26,19 @@
 			<h1>Inserir nova Turma</h1>
 		</div>
 		<form name="myform" class="form-horizontal"
-			action="<%=request.getContextPath()%>/turma/inserir">
-
+			action="<%=request.getContextPath()%>/turma/inserir" method="post">
+			<input type="hidden" name="cod" value="${cod}">
 			<div class="form-group">
 				<label class="col-sm-3 control-label" for="datainicio">Data
 					de início:</label>
 				<div>
-					<input type="date" name="datainicio" id="datainicio"
+					<input type="text" name="datainicio" id="datainicio"
 						value='<fmt:formatDate pattern="dd/MM/yyyy" value="${item.datainicio}"/>' />
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-3 control-label" for="numeroDevagas">Numero de vagas:</label>
+				<label class="col-sm-3 control-label" for="numeroDevagas">Numero
+					de vagas:</label>
 				<div>
 					<input type="number" name="numeroDeVagas" id="numeroDeVagas"
 						value="${item.numeroDeVagas}" />
@@ -46,8 +47,8 @@
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-12">
 					<button type="submit" class="btn btn-primary">Inserir</button>
-					<a href="<%=request.getContextPath()%>/turma/listar?cod=${cod}" 
-					class="btn btn-default">Voltar</a>	
+					<a href="<%=request.getContextPath()%>/turma/listar?cod=${cod}"
+						class="btn btn-default">Voltar</a>
 				</div>
 			</div>
 		</form>
