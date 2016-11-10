@@ -26,6 +26,7 @@ public class CursoDaoImpl implements CursoDao {
 
 	@Override
 	public void excluir(Curso x) {
+		
 		x = em.merge(x);
 		em.remove(x);
 	}

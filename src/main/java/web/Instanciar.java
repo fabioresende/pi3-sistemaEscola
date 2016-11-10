@@ -1,10 +1,13 @@
 package web;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 
 import antlr.ParserSharedInputState;
+import dominio.Aluno;
 import dominio.Curso;
 
 public class Instanciar {
@@ -44,7 +47,7 @@ public class Instanciar {
 				e.printStackTrace();
 			}
 		}
-		
+
 		c = request.getParameter("cargaHoraria");
 		if (c != null && !c.isEmpty()) {
 			try {
@@ -53,7 +56,63 @@ public class Instanciar {
 				e.printStackTrace();
 			}
 		}
+
+		return aux;
+	}
+
+	public static Aluno aluno(HttpServletRequest request) {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		Aluno aux = new Aluno();
+		String c;
+
+		c = request.getParameter("codAluno");
+		if (c != null && !c.isEmpty()) {
+			try {
+				aux.setCodAluno(Integer.parseInt(c));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+		}
+
+		c = request.getParameter("nome");
+		if (c != null && !c.isEmpty()) {
+			aux.setNome(c);
+		}
+
+		c = request.getParameter("cpf");
+		if (c != null && !c.isEmpty()) {
+				aux.setCpf(c);
+		}
+
+		c = request.getParameter("telefone");
+		if (c != null && !c.isEmpty()) {
+				aux.setTelefone(c);
+		}
 		
+		c = request.getParameter("email");
+		if (c != null && !c.isEmpty()) {
+				aux.setEmail(c);
+		}
+		
+		c = request.getParameter("nascimento");
+		if (c != null && !c.isEmpty()) {
+			try{
+				aux.setNascimento(sdf.parse(c));
+			}
+			catch (ParseException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		c = request.getParameter("renda");
+		if (c != null && !c.isEmpty()) {
+			try {
+				aux.setRenda(new BigDecimal(c));
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		return aux;
 	}

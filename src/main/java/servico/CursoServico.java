@@ -77,10 +77,21 @@ public class CursoServico {
 	
 	
 	
-	public void excluir(Curso x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.excluir(x);
-		EM.getLocalEm().getTransaction().commit();
+	public void excluir(Curso x) throws ServicoException{
+		try {
+			x = dao.buscar(x.getCodCurso());
+			if (!x.getTurmas().isEmpty()) {
+				throw new ServicoException("Exclusão não permitida: este curso possui turmas cadastradas!", 2);
+			}
+			Transaction.begin();
+			dao.excluir(x);
+			Transaction.commit();
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
 	}
 	
 	public Curso buscar(int cod) {
