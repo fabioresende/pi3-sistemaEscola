@@ -83,8 +83,12 @@ public class AlunoServico {
 		}
 	}
 
-	public void excluir(Aluno x) {
+	public void excluir(Aluno x) throws ServicoException{
 		try {
+			x = dao.buscar(x.getCodAluno());
+			if (!x.getMatriculas().isEmpty()) {
+				throw new ServicoException("Exclusão não permitida: este aluno possui matriculas cadastradas!", 2);
+			}
 			Transaction.begin();
 			dao.excluir(x);
 			Transaction.commit();

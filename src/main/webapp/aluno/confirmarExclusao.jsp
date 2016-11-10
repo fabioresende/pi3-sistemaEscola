@@ -23,21 +23,23 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Confirmar Exclusão de Curso</h1>
+			<h1>Confirmar Exclusão de Aluno</h1>
 		</div>
 		<div>
 			<ul class="list-group">
-				<li class="list-group-item">Código: ${item.codCurso}</li>
+				<li class="list-group-item">Código: ${item.codAluno}</li>
 				<li class="list-group-item">Nome: ${item.nome}</li>
-				<li class="list-group-item">Preço: <fmt:setLocale value="pt_BR" /> <fmt:formatNumber
-						type="currency" value="${item.preco}" /></li>
-				<li class="list-group-item">Pontuação: ${item.pontuacao}</li>
-				<li class="list-group-item">Carga Horária: ${item.cargaHoraria}</li>
+				<li class="list-group-item">CPF: ${item.cpf}</li>
+				<li class="list-group-item">Telefone: ${item.telefone}</li>
+				<li class="list-group-item">Data de Nascimento: ${item.nascimento}</li>
+				<li class="list-group-item">Email: ${item.email}</li>
+				<li class="list-group-item">Renda Mensal: <fmt:setLocale value="pt_BR" /> <fmt:formatNumber
+						type="currency" value="${item.renda}" /></li>
 			</ul>
 		</div>
 		<div class="col-sm-offset-2 col-sm-10">
-			<a href="<%=request.getContextPath()%>/curso/excluir?cod=${item.codCurso}" class="btn btn-danger">Excluir</a> 
-			<a href="<%=request.getContextPath()%>/curso/listar" class="btn btn-default">Voltar</a>
+			<a href="<%=request.getContextPath()%>/aluno/excluir?cod=${item.codAluno}" class="btn btn-danger">Excluir</a> 
+			<a href="<%=request.getContextPath()%>/aluno/listar" class="btn btn-default">Voltar</a>
 		</div>
 	</div>
 
