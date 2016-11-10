@@ -1,5 +1,6 @@
 package servico;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dao.TurmaDao;
@@ -16,13 +17,23 @@ public class TurmaServico {
 	public TurmaServico() {
 		dao = DaoFactory.criarTurmaDao();
 	}
-	
+	public void validar(Turma x) throws ValidacaoException{
+		List<String> erros = new ArrayList<>();
+		
+		if(x.getDatainicio() == null){
+			erros.add("Favor preencher o campo de Data de Início");
+		}
+		if(x.getNumeroDeVagas() == null){
+			erros.add("Favor preencher o campo de Número de Vagas");
+		}
+		
+		if(!erros.isEmpty()){
+			throw new ValidacaoException("Erro de validação",erros);
+		}
+	}
 	public void inserir(Turma x) throws ServicoException{
+		System.out.println("aa");
 		try {
-			Turma turma = dao.buscar(x.getCodTurma());
-			if (turma != null) {
-				throw new ServicoException("Ja existe uma turma com esse código!", 1);
-			}
 			Transaction.begin();
 			dao.inserirAtualizar(x);
 			Transaction.commit();

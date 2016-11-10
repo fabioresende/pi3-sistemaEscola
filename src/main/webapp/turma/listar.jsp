@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -45,8 +45,8 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>CÃ³digo</th>
-						<th>InÃ­cio</th>
+						<th>Código</th>
+						<th>Início</th>
 						<th>Quantidade de Vagas</th>
 					</tr>
 				</thead>
@@ -54,7 +54,7 @@
 					<c:forEach items="${itens}" var="x">
 						<tr>
 							<td>${x.codTurma}</td>
-							<td>${x.datainicio}</td>
+							<td><fmt:formatDate pattern="dd/MM/yyyy" value="${x.datainicio}"/></td>
 							<td>${x.numeroDeVagas}</td>
 							<td><a
 								href="<%=request.getContextPath()%>/turma/editar?cod=${x.codTurma}"

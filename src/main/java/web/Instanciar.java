@@ -16,7 +16,12 @@ public class Instanciar {
 
 		s = request.getParameter("codTurma");
 		if (s != null && !s.isEmpty()) {
-			aux.setNumeroDeVagas(Integer.parseInt(s));
+			try{
+				aux.setNumeroDeVagas(Integer.parseInt(s));
+			}
+			catch(NumberFormatException e){
+				e.printStackTrace();
+			}
 		}
 
 		s = request.getParameter("datainicio");
@@ -31,9 +36,14 @@ public class Instanciar {
 
 		s = request.getParameter("numeroDeVagas");
 		if (s != null && !s.isEmpty()) {
-			aux.setNumeroDeVagas(Integer.parseInt(s));
+			try{
+				aux.setNumeroDeVagas(Integer.parseInt(s));
+			}
+			catch(NumberFormatException e){
+				e.printStackTrace();
+			}
 		}
-
+		
 		aux.setFinalizada(false);
 
 		return aux;

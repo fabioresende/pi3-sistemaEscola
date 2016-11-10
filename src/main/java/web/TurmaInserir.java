@@ -20,6 +20,7 @@ public class TurmaInserir extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
 	private static String DESTINO = "/turma/listar.jsp";
+	private static String FORM = "/turma/formIserir.jsp";
 	private static String ERRO = "/publico/erro.jsp";
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
 		CursoServico cs = new CursoServico();
@@ -28,14 +29,21 @@ public class TurmaInserir extends HttpServlet{
 		Integer cod = Integer.parseInt(request.getParameter("cod"));
 		Curso c = cs.buscar(cod);
 		try {
+			t.setCurso(c);
+			ts.validar(t);
 			ts.inserir(t);
 			List<Turma> itens = ts.buscarTurmasNaoFinalizadas(c);
+			
 		    request.setAttribute("itens",itens);
 		    request.setAttribute("cod",cod);
 		    request.getRequestDispatcher(DESTINO).forward(request,response);
 		} catch (ServicoException e) {
 			request.setAttribute("msg",e.getMessage());
 			request.getRequestDispatcher(ERRO).forward(request,response);
+		} catch (ValidacaoException e){
+			request.setAttribute("erros",e.getErros());
+			request.setAttribute("item",t);
+			request.getRequestDispatcher(FORM).forward(request,response);
 		}
 	}
 }

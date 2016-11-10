@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -29,8 +29,17 @@
 			action="<%=request.getContextPath()%>/turma/inserir" method="post">
 			<input type="hidden" name="cod" value="${cod}">
 			<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-12">
+					<ul>
+						<c:forEach items="${erros}" var="x">
+							<li class="erro">${msg}</li>
+						</c:forEach>
+					</ul>
+				</div>
+			</div>
+			<div class="form-group">
 				<label class="col-sm-3 control-label" for="datainicio">Data
-					de inÃ­cio:</label>
+					de início:</label>
 				<div>
 					<input type="text" name="datainicio" id="datainicio"
 						value='<fmt:formatDate pattern="dd/MM/yyyy" value="${item.datainicio}"/>' />
