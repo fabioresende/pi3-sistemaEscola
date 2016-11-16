@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import antlr.ParserSharedInputState;
 import dominio.Aluno;
 import dominio.Curso;
+import dominio.Matricula;
 import dominio.Turma;
 
 
@@ -51,6 +52,36 @@ public class Instanciar {
 		
 		
 		aux.setFinalizada(false);
+
+		return aux;
+	}
+	public static Matricula matricula(HttpServletRequest request) {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		Matricula aux = new Matricula();
+		String s;
+
+		s = request.getParameter("codMatricula");
+		if (s != null && !s.isEmpty()) {
+			try{
+				aux.setCodMatricula(Integer.parseInt(s));
+			}
+			catch(NumberFormatException e){
+				e.printStackTrace();
+			}
+		}
+
+		s = request.getParameter("numParcelas");
+		if (s != null && !s.isEmpty()) {
+			try{
+				aux.setNumParcelas(Integer.parseInt(s));
+			}
+			catch(NumberFormatException e){
+				e.printStackTrace();
+			}
+		}
+		
+		aux.setDataMatricula(new Date());
+	
 
 		return aux;
 	}

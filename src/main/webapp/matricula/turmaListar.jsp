@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 <title>Sistema de Escola</title>
 <link
@@ -23,35 +23,31 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Cursos</h1>
+			<h1>Turmas</h1>
 		</div>
-		
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Código</th>
-					<th>Nome</th>
-					<th>Preço</th>
-					<th>Pontuação</th>
-					<th>Carga Horária</th>
-					<th>Ação</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${itens}" var="x">
+		<div>
+			<table class="table">
+				<thead>
 					<tr>
-						<td>${x.codCurso}</td>
-						<td>${x.nome}</td>
-						<td><fmt:setLocale value="pt_BR"/><fmt:formatNumber type="currency" value="${x.preco}"/></td>
-						<td>${x.pontuacao}</td>
-						<td>${x.cargaHoraria}</td>
-						<td>
-							<a href="<%=request.getContextPath()%>/matricula/turmaListar?cod=${x.codCurso}" class="btn btn-primary btn-xs">Entrar</a>
-						</td>
+						<th>Código</th>
+						<th>Início</th>
+						<th>Quantidade de Vagas</th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					<c:forEach items="${itens}" var="x">
+						<tr>
+							<td>${x.codTurma}</td>
+							<td><fmt:formatDate pattern="dd/MM/yyyy" value="${x.datainicio}"/></td>
+							<td>${x.numeroDeVagas}</td>
+							<td><a
+								href="<%=request.getContextPath()%>/matricula/alunoListar?cod=${x.codTurma}"
+								class="btn btn-primary btn-xs">Entrar</a>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</div>
 
 	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>

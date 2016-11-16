@@ -23,7 +23,7 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Cursos</h1>
+			<h1>Alunos</h1>
 		</div>
 		
 		<table class="table">
@@ -31,22 +31,25 @@
 				<tr>
 					<th>Código</th>
 					<th>Nome</th>
-					<th>Preço</th>
-					<th>Pontuação</th>
-					<th>Carga Horária</th>
-					<th>Ação</th>
+					<th>CPF</th>
+					<th>Telefone</th>
+					<th>Data de Nascimento</th>
+					<th>Email</th>
+					<th>Renda Mensal</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${itens}" var="x">
 					<tr>
-						<td>${x.codCurso}</td>
+						<td>${x.codAluno}</td>
 						<td>${x.nome}</td>
-						<td><fmt:setLocale value="pt_BR"/><fmt:formatNumber type="currency" value="${x.preco}"/></td>
-						<td>${x.pontuacao}</td>
-						<td>${x.cargaHoraria}</td>
+						<td>${x.cpf}</td>
+						<td>${x.telefone}</td>
+						<td>${x.nascimento}</td>
+						<td>${x.email}</td>
+						<td><fmt:setLocale value="pt_BR"/><fmt:formatNumber type="currency" value="${x.renda}"/></td>
 						<td>
-							<a href="<%=request.getContextPath()%>/matricula/turmaListar?cod=${x.codCurso}" class="btn btn-primary btn-xs">Entrar</a>
+							<a href="<%=request.getContextPath()%>/matricula/novo?codAluno=${x.codAluno}&codTurma=${codTurma}" class="btn btn-primary btn-xs">Matricular</a>
 						</td>
 					</tr>
 				</c:forEach>
