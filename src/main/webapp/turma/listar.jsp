@@ -23,7 +23,7 @@
 	<!-- Begin page content -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Turmas de ${curso.nome}</h1>
+			<h1>Turmas</h1>
 		</div>
 		<div class="row">
 			<div class="col-sm-2">
@@ -59,7 +59,7 @@
 							<td><a
 								href="<%=request.getContextPath()%>/turma/editar?cod=${x.codTurma}"
 								class="btn btn-primary btn-xs">Editar</a> <a
-								href="<%=request.getContextPath()%>/turma/excluir?cod=${x.codTurma}"
+								href="<%=request.getContextPath()%>/turma/remover?cod=${x.codTurma}"
 								class="btn btn-danger btn-xs">Excluir</a></td>
 						</tr>
 					</c:forEach>

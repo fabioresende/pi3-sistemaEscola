@@ -36,15 +36,15 @@ public class Instanciacao extends HttpServlet {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			
 			Curso c1 = new Curso(null, "Sistemmas para Internet",2800,new BigDecimal("0.00"),5.0);
-			Curso c2 = new Curso(null, "Ciência da commputacao",4200,new BigDecimal("1000.00"),3.0);
+			Curso c2 = new Curso(null, "Ciência da computacao",4200,new BigDecimal("1000.00"),3.0);
 			
 			Turma t1 = new Turma(null, sdf.parse("20/10/2015"),30,true,c1);
 			Turma t2 = new Turma(null, sdf.parse("01/02/2014"),40,false,c2);
 			Turma t3 = new Turma(null, sdf.parse("25/10/2015"),30,true,c1);
 			Turma t4 = new Turma(null, sdf.parse("05/02/2014"),40,false,c2);
 			
-		    Aluno a1 = new Aluno(null,"Aluno1","12345678900","(34)0000-0000",sdf.parse("20/02/2015"),"email@.com",new BigDecimal("700.00"));
-		    Aluno a2 = new Aluno(null,"Aluno2","12345678902","(34)0000-0002",sdf.parse("23/03/2015"),"email2@.com",new BigDecimal("800.00"));
+		    Aluno a1 = new Aluno(null,"Leonardo","12345678900","(34)0000-0000",sdf.parse("20/02/2015"),"email@.com",new BigDecimal("700.00"));
+		    Aluno a2 = new Aluno(null,"Itallo","12345678902","(34)0000-0002",sdf.parse("23/03/2015"),"email2@.com",new BigDecimal("800.00"));
 		    Aluno a3 = new Aluno(null,"Aluno3","12345678903","(34)0000-0003",sdf.parse("20/04/2015"),"email3@.com",new BigDecimal("900.00"));
 		    Aluno a4 = new Aluno(null,"Aluno4","12345678904","(34)0000-0004",sdf.parse("20/05/2015"),"email4@.com",new BigDecimal("1000.00"));
 		    Aluno a5 = new Aluno(null,"Aluno5","12345678905","(34)0000-0005",sdf.parse("20/07/2015"),"email5@.com",new BigDecimal("600.00"));
@@ -93,26 +93,26 @@ public class Instanciacao extends HttpServlet {
 			ts.inserir(t3);
 			ts.inserir(t4);
 			
-			as.inserirAtualizar(a1);
-			as.inserirAtualizar(a2);
-			as.inserirAtualizar(a3);
-			as.inserirAtualizar(a4);
-			as.inserirAtualizar(a5);
-			as.inserirAtualizar(a6);
-			as.inserirAtualizar(a7);
-			as.inserirAtualizar(a8);			
-			as.inserirAtualizar(a9);
-			as.inserirAtualizar(a10);
+			as.inserir(a1);
+			as.inserir(a2);
+			as.inserir(a3);
+			as.inserir(a4);
+			as.inserir(a5);
+			as.inserir(a6);
+			as.inserir(a7);
+			as.inserir(a8);			
+			as.inserir(a9);
+			as.inserir(a10);
 			
 			
-			ms.inserirAtualizar(m1);
-			ms.inserirAtualizar(m2);
-			ms.inserirAtualizar(m3);
-			ms.inserirAtualizar(m4);
-			ms.inserirAtualizar(m5);
-			ms.inserirAtualizar(m6);
-			ms.inserirAtualizar(m7);
-			ms.inserirAtualizar(m8);
+			ms.inserir(m1);
+			ms.inserir(m2);
+			ms.inserir(m3);
+			ms.inserir(m4);
+			ms.inserir(m5);
+			ms.inserir(m6);
+			ms.inserir(m7);
+			ms.inserir(m8);
 			
 			avs.inserirAtualizar(av1);
 			avs.inserirAtualizar(av2);

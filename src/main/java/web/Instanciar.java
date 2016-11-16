@@ -22,7 +22,7 @@ public class Instanciar {
 		s = request.getParameter("codTurma");
 		if (s != null && !s.isEmpty()) {
 			try{
-				aux.setNumeroDeVagas(Integer.parseInt(s));
+				aux.setCodTurma(Integer.parseInt(s));
 			}
 			catch(NumberFormatException e){
 				e.printStackTrace();
@@ -48,6 +48,7 @@ public class Instanciar {
 				e.printStackTrace();
 			}
 		}
+		
 		
 		aux.setFinalizada(false);
 

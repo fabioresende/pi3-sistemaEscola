@@ -14,11 +14,11 @@ import dominio.Turma;
 import servico.CursoServico;
 import servico.TurmaServico;
 
-@WebServlet("/turma/editar")
-public class TurmaEditar extends HttpServlet{
+@WebServlet("/turma/remover")
+public class TurmaRemover extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
-	private static String DESTINO = "/turma/formEditar.jsp";
+	private static String DESTINO = "/turma/confirmarExclusao.jsp";
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
 		TurmaServico ts= new TurmaServico(); 
 		

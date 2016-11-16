@@ -45,11 +45,7 @@ public class TurmaServico {
 		}
 	}	
 	public void atualizar(Turma x) throws ServicoException {
-		Turma turma = dao.buscar(x.getCodTurma());
-		if (turma != null) {
-			throw new ServicoException("Ja existe uma turma com esse código!", 1);
-		}
-
+		System.out.println(x);
 		try {
 			Transaction.begin();
 			dao.inserirAtualizar(x);
@@ -62,7 +58,7 @@ public class TurmaServico {
 		}
 	}
 
-	public void excluir(Turma x) {
+	public void excluir(Turma x) throws ServicoException{
 		try {
 			Transaction.begin();
 			dao.excluir(x);
