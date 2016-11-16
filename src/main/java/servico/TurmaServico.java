@@ -1,5 +1,6 @@
 package servico;
 
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +46,6 @@ public class TurmaServico {
 		}
 	}	
 	public void atualizar(Turma x) throws ServicoException {
-		System.out.println(x);
 		try {
 			Transaction.begin();
 			dao.inserirAtualizar(x);

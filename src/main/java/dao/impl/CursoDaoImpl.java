@@ -1,5 +1,6 @@
 package dao.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -47,7 +48,7 @@ public class CursoDaoImpl implements CursoDao {
 	@SuppressWarnings("unchecked")
 	@Override
 
-	public List<Curso> buscarPorNome(String nome,Double precoMinimo,Double precoMaximo){
+	public List<Curso> buscarPorNome(String nome,BigDecimal precoMinimo,BigDecimal precoMaximo){
 		String jqpl = "Select x from Curso x where x.nome like :p1 and x.preco>:p2 and x.preco<:p3";
 		Query query = em.createQuery(jqpl);
 		query.setParameter("p1", "%"+nome+"%");

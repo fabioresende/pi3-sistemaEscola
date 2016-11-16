@@ -1,5 +1,6 @@
 package servico;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,23 +28,23 @@ public class CursoServico {
 			erros.add("Favor preencher campo nome");
 		}
 		if(x.getCargaHoraria()==null){
-			erros.add("Favor preencher campo carga hor·ria");
+			erros.add("Favor preencher campo carga hor√°ria");
 		}
 		if(x.getPontuacao()==null){
-			erros.add("Favor preencher campo pontuaÁ„o");
+			erros.add("Favor preencher campo pontua√ß√£o");
 		}
 		if(x.getPreco()==null){
-			erros.add("Favor preencher campo preÁo");
+			erros.add("Favor preencher campo pre√ßo");
 		}
 		if(!erros.isEmpty()){
-			throw new ValidacaoException("Erros validaÁ„o",erros);
+			throw new ValidacaoException("Erros valida√ß√£o",erros);
 		}
 	}
 	public void inserir(Curso x) throws ServicoException {
 		try {
 			Curso aluno = dao.buscarNomeExato(x.getNome());
 			if (aluno != null) {
-				throw new ServicoException("J· existe um curso com esse nome!", 1);
+				throw new ServicoException("J√° existe um curso com esse nome!", 1);
 			}
 			Transaction.begin();
 			dao.inserirAtualizar(x);
@@ -60,7 +61,7 @@ public class CursoServico {
 	public void atualizar(Curso x) throws ServicoException {
 		Curso aluno = dao.buscarNomeExato(x.getNome());
 		if (aluno != null) {
-			throw new ServicoException("J· existe um curso com esse nome!", 1);
+			throw new ServicoException("J√° existe um curso com esse nome!", 1);
 		}
 
 		try {
@@ -81,7 +82,7 @@ public class CursoServico {
 		try {
 			x = dao.buscar(x.getCodCurso());
 			if (!x.getTurmas().isEmpty()) {
-				throw new ServicoException("Exclus„o n„o permitida: este curso possui turmas cadastradas!", 2);
+				throw new ServicoException("Exclus√£o n√£o permitida: este curso possui turmas cadastradas!", 2);
 			}
 			Transaction.begin();
 			dao.excluir(x);
@@ -102,7 +103,7 @@ public class CursoServico {
 		return dao.buscarTodos();
 	}
 
-	public List<Curso> buscarPorNome(String nome,Double precoMinimo,Double precoMaximo){
+	public List<Curso> buscarPorNome(String nome,BigDecimal precoMinimo,BigDecimal precoMaximo){
 		return dao.buscarPorNome(nome,precoMinimo,precoMaximo);
 	}
 
