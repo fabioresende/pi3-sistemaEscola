@@ -1,6 +1,7 @@
 package web;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -17,12 +18,15 @@ public class CursoResultadoPesquisa extends HttpServlet{
 	private static final long serialVersionVID = 1l;
 	
 	private static String DESTINO = "/curso/listar.jsp";
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
 		CursoServico cs = new CursoServico();
 		String trechoNome = request.getParameter("trechoNome");
-		String trechoNome = request.getParameter("trechoNome");
-		List<Curso> itens = cs.buscar(nome);
+		String aux = request.getParameter("precoMinimo");
+		BigDecimal precoMinimo = new BigDecimal(aux); 
+		aux = request.getParameter("precoMaximo");
+		BigDecimal precoMaximo = new BigDecimal(aux);
+		List<Curso> itens = cs.buscarPorNome(trechoNome, precoMinimo, precoMaximo);
 		request.setAttribute("itens", itens);
 		request.getRequestDispatcher(DESTINO).forward(request, response);
 	}
