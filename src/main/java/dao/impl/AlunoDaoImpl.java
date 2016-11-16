@@ -63,7 +63,7 @@ public class AlunoDaoImpl implements AlunoDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Aluno> buscarPorTrecho(String trecho){
-		String jpql = "SELECT x FROM Aluno x LIKE :p1";
+		String jpql = "SELECT x FROM Aluno x WHERE x.nome LIKE :p1";
 		Query query = em.createQuery(jpql);
 		query.setParameter("p1", "%"+trecho+"%");
 		return query.getResultList();

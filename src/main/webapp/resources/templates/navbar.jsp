@@ -14,6 +14,8 @@
           <ul class="nav navbar-nav">
             <li><a href="<%=request.getContextPath() %>/curso/listar">Cadastro de Cursos</a></li>
             <li><a href="<%=request.getContextPath() %>/turma/cursos">Cadastro de Turmas</a></li>
+            <li><a href="<%=request.getContextPath() %>/aluno/listar">Cadastro de Alunos</a></li>
+            <li><a href="<%=request.getContextPath() %>/curso/pesquisar">Pesquisar Cursos</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -1,6 +1,9 @@
 package servico;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.bind.ValidationException;
 
 import dao.CursoDao;
 import dao.DaoFactory;
@@ -17,11 +20,30 @@ public class CursoServico {
 		dao = DaoFactory.criarCursoDao();
 	}
 	
+	public void validar(Curso x) throws ValidacaoException{
+		List<String> erros = new ArrayList<>();
+		
+		if(x.getNome()==null){
+			erros.add("Favor preencher campo nome");
+		}
+		if(x.getCargaHoraria()==null){
+			erros.add("Favor preencher campo carga horária");
+		}
+		if(x.getPontuacao()==null){
+			erros.add("Favor preencher campo pontuação");
+		}
+		if(x.getPreco()==null){
+			erros.add("Favor preencher campo preço");
+		}
+		if(!erros.isEmpty()){
+			throw new ValidacaoException("Erros validação",erros);
+		}
+	}
 	public void inserir(Curso x) throws ServicoException {
 		try {
 			Curso aluno = dao.buscarNomeExato(x.getNome());
 			if (aluno != null) {
-				throw new ServicoException("JÃ¡ existe um aluno com esse cpf!", 1);
+				throw new ServicoException("Já existe um curso com esse nome!", 1);
 			}
 			Transaction.begin();
 			dao.inserirAtualizar(x);
@@ -38,7 +60,7 @@ public class CursoServico {
 	public void atualizar(Curso x) throws ServicoException {
 		Curso aluno = dao.buscarNomeExato(x.getNome());
 		if (aluno != null) {
-			throw new ServicoException("JÃ¡ existe um aluno com esse cpf!", 1);
+			throw new ServicoException("Já existe um curso com esse nome!", 1);
 		}
 
 		try {
@@ -55,10 +77,21 @@ public class CursoServico {
 	
 	
 	
-	public void excluir(Curso x) {
-		EM.getLocalEm().getTransaction().begin();
-		dao.excluir(x);
-		EM.getLocalEm().getTransaction().commit();
+	public void excluir(Curso x) throws ServicoException{
+		try {
+			x = dao.buscar(x.getCodCurso());
+			if (!x.getTurmas().isEmpty()) {
+				throw new ServicoException("Exclusão não permitida: este curso possui turmas cadastradas!", 2);
+			}
+			Transaction.begin();
+			dao.excluir(x);
+			Transaction.commit();
+		} catch (RuntimeException e) {
+			if (Transaction.isActive()) {
+				Transaction.rollback();
+			}
+			System.out.println("Erro: " + e.getMessage());
+		}
 	}
 	
 	public Curso buscar(int cod) {
