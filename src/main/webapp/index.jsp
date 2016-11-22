@@ -5,7 +5,6 @@
 <html>
   <head>
     <meta charset="ISO-8859-1">
-
     <title>Sistema de Escola</title>
     <link href="<%=request.getContextPath() %>/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/sticky-footer-navbar.css" rel="stylesheet">
@@ -16,17 +15,21 @@
     <jsp:include page="/resources/templates/navbar.jsp"></jsp:include>
 
     <!-- Begin page content -->
-    <div class="container">
+    <div class="container card teste">
       <div class="page-header">
         <h1>Página inicial</h1>
       </div>
       <p class="lead">Sistema Java para escola</p>
       <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
     </div>
-
+    <div class="bg-black">
+    </div>
+	<div class="expand">
+		<img src="imagens/teste2.jpg" class="expand-image">
+	</div>
     <jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
 
-
+	
     
     <!-- Core JS -->
     <script src="<%=request.getContextPath() %>/resources/js/jquery.min.js"></script>
