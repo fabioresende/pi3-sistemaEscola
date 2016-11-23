@@ -15,12 +15,14 @@
     <jsp:include page="/resources/templates/navbar.jsp"></jsp:include>
 
     <!-- Begin page content -->
-    <div class="container card teste">
-      <div class="page-header">
-        <h1>Página inicial</h1>
+    <div class="container">
+      <div class="card teste">
+      	<div class="card-block">
+        	<h1 class="card title">Página inicial</h1>
+      	</div>
+      		<p class="lead">Sistema Java para escola</p>
+      		<p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
       </div>
-      <p class="lead">Sistema Java para escola</p>
-      <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
     </div>
     <div class="bg-black">
     </div>
