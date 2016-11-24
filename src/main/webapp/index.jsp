@@ -6,7 +6,8 @@
   <head>
     <meta charset="ISO-8859-1">
     <title>Sistema de Escola</title>
-    <link href="<%=request.getContextPath() %>/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath() %>/resources/css/bootstrap.css" rel="stylesheet">
+     <link href="<%=request.getContextPath() %>/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/css/sticky-footer-navbar.css" rel="stylesheet">
   </head>
 
@@ -18,7 +19,7 @@
     <div class="container">
       <div class="card teste">
       	<div class="card-block">
-        	<h1 class="card title">Página inicial</h1>
+        	<h1 class="card-title">Página inicial</h1>
       	</div>
       		<p class="lead">Sistema Java para escola</p>
       		<p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>

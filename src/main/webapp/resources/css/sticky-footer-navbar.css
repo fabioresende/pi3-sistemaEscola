@@ -73,3 +73,39 @@ code {
 	right:0px;
 	bottom: 0px;
 }
+.btn-circle{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.grid{
+	margin: auto;
+	margin-top: 100px;
+}
+.cor-menu{
+	background-color: rgb(41,53,65);
+}
+.item-menu{
+	color:white;
+}
+body{
+	background-color: rgb(235,235,235);
+}
+.card-titulo{
+	background-color: white;
+}
+.card-container{
+	width:1200px;
+}
