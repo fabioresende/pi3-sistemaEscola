@@ -12,7 +12,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav item-menu">
-            <li><a href="<%=request.getContextPath() %>/curso/listar" style="color:silver"><span class="glyphicon glyphicon-education"></span> Curso</a></li>
+            <li><a href="<%=request.getContextPath() %>/curso/listar" style="color:silver" class=""><span class="glyphicon glyphicon-education"></span> Curso</a></li>
             <li><a href="<%=request.getContextPath() %>/turma/cursos" style="color:silver"><span class="glyphicon glyphicon-th-large"></span> Turma</a></li>
             <li><a href="<%=request.getContextPath() %>/aluno/listar" style="color:silver"><span class="glyphicon glyphicon-user"></span> Aluno</a></li>
             <li><a href="<%=request.getContextPath() %>/curso/pesquisar" style="color:silver"><span class="glyphicon glyphicon-search"></span> Pesquisar Cursos</a></li>

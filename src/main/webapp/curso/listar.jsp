@@ -10,7 +10,8 @@
 <title>Sistema de Escola</title>
 <link href="<%=request.getContextPath()%>/resources/css/bootstrap.css"
 	rel="stylesheet">
-<link href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
+<link
+	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
 	rel="stylesheet">
 <link
 	href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css"
@@ -24,7 +25,9 @@
 	<!-- Begin page content -->
 	<div class="card card-container card-block grid">
 		<div class="card-header card-block card-titulo">
-			<h1 class="card-title"><span class="glyphicon glyphicon-education"></span> Cursos</h1>
+			<h1 class="card-title">
+				<span class="glyphicon glyphicon-education"></span> Cursos
+			</h1>
 		</div>
 
 		<div class="row card-block">
@@ -32,8 +35,7 @@
 				<form class="navbar-form"
 					action="<%=request.getContextPath()%>/curso/novo">
 					<button type="submit" class="btn btn-primary">
-						<span class=" glyphicon glyphicon-plus"></span>
-						Inserir novo
+						<span class=" glyphicon glyphicon-plus"></span> Inserir novo
 					</button>
 				</form>
 			</div>
@@ -44,7 +46,9 @@
 						<input type="text" name="busca" placeholder="Dgite um nome"
 							class="form-control" />
 					</div>
-					<button type="submit" class="btn btn-success">Filtrar</button>
+					<button type="submit" class="btn btn-success">
+						<span class="glyphicon glyphicon-search"> </span>
+					</button>
 				</form>
 			</div>
 		</div>
@@ -77,8 +81,11 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		<div class="bg-black"></div>
+		<div class="expand">
+			<img src="teste3.jpg" class="expand-image">
+		</div>
 	</div>
-
 	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
 
 
