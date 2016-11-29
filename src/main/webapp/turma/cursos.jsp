@@ -8,6 +8,8 @@
 <meta charset="UTF-8">
 
 <title>Sistema de Escola</title>
+<link href="<%=request.getContextPath()%>/resources/css/bootstrap.css"
+	rel="stylesheet">
 <link
 	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -21,29 +23,58 @@
 	<jsp:include page="/resources/templates/navbar.jsp"></jsp:include>
 
 	<!-- Begin page content -->
-	<div class="container">
-		<div class="page-header">
-			<h1>Escolha um curso</h1>
+	<div class="card card-container card-block grid">
+		<div class="card-header card-block card-titulo">
+			<h1 class="card-title">
+				<span class="glyphicon glyphicon-education"></span> Cursos
+			</h1>
 		</div>
-		<div>
-			<table class="table">
-				<thead>
+
+		<div class="row card-block">
+			<div class="col-sm-2">
+				<form class="navbar-form"
+					action="<%=request.getContextPath()%>/curso/novo">
+					<button type="submit" class="btn btn-primary">
+						<span class=" glyphicon glyphicon-plus"></span> Inserir novo
+					</button>
+				</form>
+			</div>
+			<div class="col-sm-6">
+				<form class="navbar-form"
+					action="<%=request.getContextPath()%>/curso/filtrar">
+					<div class="form-group">
+						<input type="text" name="busca" placeholder="Dgite um nome"
+							class="form-control" />
+					</div>
+					<button type="submit" class="btn btn-success">
+						<span class="glyphicon glyphicon-search"> </span>
+					</button>
+				</form>
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Nome</th>
+					<th>Ação</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${itens}" var="x">
 					<tr>
-						<th>Código</th>
-						<th>Nome</th>
-						<th>Ação</th>
+						<td>${x.codCurso}</td>
+						<td>${x.nome}</td>
+						<td><a
+							href="<%=request.getContextPath()%>/turma/listar?cod=${x.codCurso}"
+							class="btn btn-primary btn-xs">Entrar</a></td>
 					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${itens}" var="x">
-						<tr>
-							<td>${x.codCurso}</td>
-							<td>${x.nome}</td>
-							<td><a href="<%=request.getContextPath()%>/turma/listar?cod=${x.codCurso}" class="btn btn-primary btn-xs">Entrar</a></td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+				</c:forEach>
+			</tbody>
+		</table>
+		<div class="bg-black"></div>
+		<div class="expand">
+			<img src="../imagens/teste3.jpg" class="expand-image">
 		</div>
 	</div>
 

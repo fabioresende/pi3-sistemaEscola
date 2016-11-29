@@ -8,6 +8,8 @@
 <meta charset="ISO-8859-1">
 
 <title>Sistema de Escola</title>
+<link href="<%=request.getContextPath()%>/resources/css/bootstrap.css"
+	rel="stylesheet">
 <link
 	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -21,23 +23,32 @@
 	<jsp:include page="/resources/templates/navbar.jsp"></jsp:include>
 
 	<!-- Begin page content -->
-	<div class="container">
-		<div class="page-header">
-			<h1>Confirmar Exclusão de Curso</h1>
+	<div class="card card-container card-block grid">
+		<div class="card-header card-block card-titulo">
+			<h1 class="card-title">
+				<span class="glyphicon glyphicon-education"></span> Dados do Curso
+			</h1>
 		</div>
 		<div>
 			<ul class="list-group">
 				<li class="list-group-item">Código: ${item.codCurso}</li>
 				<li class="list-group-item">Nome: ${item.nome}</li>
-				<li class="list-group-item">Preço: <fmt:setLocale value="pt_BR" /> <fmt:formatNumber
-						type="currency" value="${item.preco}" /></li>
+				<li class="list-group-item">Preço: <fmt:setLocale value="pt_BR" />
+					<fmt:formatNumber type="currency" value="${item.preco}" /></li>
 				<li class="list-group-item">Pontuação: ${item.pontuacao}</li>
 				<li class="list-group-item">Carga Horária: ${item.cargaHoraria}</li>
 			</ul>
 		</div>
 		<div class="col-sm-offset-2 col-sm-10">
-			<a href="<%=request.getContextPath()%>/curso/excluir?cod=${item.codCurso}" class="btn btn-danger">Excluir</a> 
-			<a href="<%=request.getContextPath()%>/curso/listar" class="btn btn-default">Voltar</a>
+			<a
+				href="<%=request.getContextPath()%>/curso/excluir?cod=${item.codCurso}"
+				class="btn btn-danger">Excluir</a> <a
+				href="<%=request.getContextPath()%>/curso/listar"
+				class="btn btn-default">Voltar</a>
+		</div>
+		<div class="bg-black"></div>
+		<div class="expand">
+			<img src="../imagens/teste3.jpg" class="expand-image">
 		</div>
 	</div>
 

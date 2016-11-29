@@ -8,6 +8,8 @@
 <meta charset="ISO-8859-1">
 
 <title>Sistema de Escola</title>
+<link href="<%=request.getContextPath()%>/resources/css/bootstrap.css"
+	rel="stylesheet">
 <link
 	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -21,11 +23,12 @@
 	<jsp:include page="/resources/templates/navbar.jsp"></jsp:include>
 
 	<!-- Begin page content -->
-	<div class="container">
-		<div class="page-header">
-			<h1>Cursos</h1>
+	<div class="card card-container card-block grid">
+		<div class="card-header card-block card-titulo">
+			<h1 class="card-title">
+				<span class="glyphicon glyphicon-user"></span> Alunos
+			</h1>
 		</div>
-		
 		<table class="table">
 			<thead>
 				<tr>
@@ -42,16 +45,21 @@
 					<tr>
 						<td>${x.codCurso}</td>
 						<td>${x.nome}</td>
-						<td><fmt:setLocale value="pt_BR"/><fmt:formatNumber type="currency" value="${x.preco}"/></td>
+						<td><fmt:setLocale value="pt_BR" /> <fmt:formatNumber
+								type="currency" value="${x.preco}" /></td>
 						<td>${x.pontuacao}</td>
 						<td>${x.cargaHoraria}</td>
-						<td>
-							<a href="<%=request.getContextPath()%>/matricula/turmaListar?cod=${x.codCurso}" class="btn btn-primary btn-xs">Entrar</a>
-						</td>
+						<td><a
+							href="<%=request.getContextPath()%>/matricula/turmaListar?cod=${x.codCurso}"
+							class="btn btn-primary btn-xs">Entrar</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		<div class="bg-black"></div>
+		<div class="expand">
+			<img src="../imagens/teste3.jpg" class="expand-image">
+		</div>
 	</div>
 
 	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>

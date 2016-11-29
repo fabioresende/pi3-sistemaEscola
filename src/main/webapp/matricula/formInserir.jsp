@@ -8,6 +8,8 @@
 <meta charset="UTF-8">
 
 <title>Sistema de Escola</title>
+<link href="<%=request.getContextPath()%>/resources/css/bootstrap.css"
+	rel="stylesheet">
 <link
 	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -21,15 +23,17 @@
 	<jsp:include page="/resources/templates/navbar.jsp"></jsp:include>
 
 	<!-- Begin page content -->
-	<div class="container">
-		<div class="page-header">
-			<h1>Inserir nova Matrícula</h1>
+	<div class="card card-container card-block grid">
+		<div class="card-header card-block card-titulo">
+			<h1 class="card-title">
+				<span class="glyphicon glyphicon-folder-open"></span> Inserir nova Matrícula
+			</h1>
 		</div>
 		<form name="myform" class="form-horizontal"
 			action="<%=request.getContextPath()%>/matricula/inserir"
 			method="post">
-			<input type="hidden" name="codTurma" value="${codTurma}">
-			<input type="hidden" name="codAluno" value="${codAluno}">
+			<input type="hidden" name="codTurma" value="${codTurma}"> <input
+				type="hidden" name="codAluno" value="${codAluno}">
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-12">
 					<ul>
@@ -44,7 +48,7 @@
 					de parcelas:</label>
 				<div class="col-sm-5">
 					<input type="number" name="numParcelas" id="numParcelas"
-						value="${item.numParcelas}" class="form-control"/>
+						value="${item.numParcelas}" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -55,6 +59,10 @@
 				</div>
 			</div>
 		</form>
+		<div class="bg-black"></div>
+		<div class="expand">
+			<img src="../imagens/teste3.jpg" class="expand-image">
+		</div>
 	</div>
 
 	<jsp:include page="/resources/templates/rodape.jsp"></jsp:include>

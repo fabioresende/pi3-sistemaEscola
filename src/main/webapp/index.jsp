@@ -28,7 +28,7 @@
     <div class="bg-black">
     </div>
 	<div class="expand">
-		<img src="imagens/teste2.jpg" class="expand-image">
+		<img src="imagens/teste3.jpg" class="expand-image">
 	</div>
     <jsp:include page="/resources/templates/rodape.jsp"></jsp:include>
 
