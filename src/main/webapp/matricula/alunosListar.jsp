@@ -26,32 +26,10 @@
 	<div class="card card-container card-block grid">
 		<div class="card-header card-block card-titulo">
 			<h1 class="card-title">
-				<span class="glyphicon glyphicon-education"></span> Cursos
+				<span class="glyphicon  glyphicon-folder-open"></span> Escolha um Aluno  
 			</h1>
 		</div>
 
-		<div class="row card-block">
-			<div class="col-sm-2">
-				<form class="navbar-form"
-					action="<%=request.getContextPath()%>/curso/novo">
-					<button type="submit" class="btn btn-primary">
-						<span class=" glyphicon glyphicon-plus"></span> Inserir novo
-					</button>
-				</form>
-			</div>
-			<div class="col-sm-6">
-				<form class="navbar-form"
-					action="<%=request.getContextPath()%>/curso/filtrar">
-					<div class="form-group">
-						<input type="text" name="busca" placeholder="Dgite um nome"
-							class="form-control" />
-					</div>
-					<button type="submit" class="btn btn-success">
-						<span class="glyphicon glyphicon-search"> </span>
-					</button>
-				</form>
-			</div>
-		</div>
 		<table class="table">
 			<thead>
 				<tr>
