@@ -16,6 +16,8 @@
 <link
 	href="<%=request.getContextPath()%>/resources/css/sticky-footer-navbar.css"
 	rel="stylesheet">
+<script src="<%=request.getContextPath()%>/resources/js/menu.js">
+</script>
 </head>
 
 <body>
