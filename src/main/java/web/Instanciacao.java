@@ -35,7 +35,7 @@ public class Instanciacao extends HttpServlet {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			
-			Curso c1 = new Curso(null, "Sistemmas para Internet",2800,new BigDecimal("900.00"),5.0);
+			Curso c1 = new Curso(null, "Sistemas para Internet",2800,new BigDecimal("900.00"),5.0);
 			Curso c2 = new Curso(null, "Ciência da computacao",4200,new BigDecimal("1000.00"),3.0);
 			
 			Turma t1 = new Turma(null, sdf.parse("20/10/2015"),30,true,c1);

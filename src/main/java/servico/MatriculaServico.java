@@ -8,6 +8,8 @@ import java.util.List;
 import dao.MatriculaDao;
 import dao.DaoFactory;
 import dao.impl.EM;
+import dominio.Aluno;
+import dominio.Curso;
 import dominio.Matricula;
 import dominio.Turma;
 import dao.Transaction;
@@ -32,10 +34,11 @@ public class MatriculaServico {
 	}
 	public void inserir(Matricula x) throws ServicoException{
 		try{
-			System.out.println(x);
-			Matricula aux = dao.buscarCodigoExato(x.getCodMatricula());
-			if(aux != null){
-				throw new ServicoException("Já existe matricula com esse código!",1);
+			Aluno aluno = x.getAluno();
+		    Turma turma = x.getTurma();
+			Matricula m = dao.buscarRegistroMatricula(turma, aluno);
+			if (m != null) {
+				throw new ServicoException("Este aluno ja está metriculado nessa turma!!", 1);
 			}
 			Transaction.begin();
 			dao.inserirAtualizar(x);
@@ -45,6 +48,7 @@ public class MatriculaServico {
 			if(Transaction.isActive()){
 				Transaction.rollback();
 			}
+			System.out.println("Erro: " + e.getMessage());
 		}
 	}
 	public void excluir(Matricula x) {

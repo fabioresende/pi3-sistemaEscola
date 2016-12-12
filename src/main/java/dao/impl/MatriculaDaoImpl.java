@@ -6,7 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import dao.MatriculaDao;
+import dominio.Aluno;
 import dominio.Matricula;
+import dominio.Turma;
 
 public class MatriculaDaoImpl implements MatriculaDao {
 
@@ -23,10 +25,11 @@ public class MatriculaDaoImpl implements MatriculaDao {
 		}
 		em.persist(x);
 	}
-	public Matricula buscarCodigoExato(int cod){
-		String jpql = "Select x from Matricula x where x.codMatricula = :p1";
-		Query query = em.createNamedQuery(jpql);
-		query.setParameter("p1",cod);
+	public Matricula buscarRegistroMatricula(Turma turma,Aluno aluno){
+		String jpql = "Select x from Matricula x where turma = :p1 and aluno = :p2";
+		Query query = em.createQuery(jpql);
+		query.setParameter("p1",turma);
+		query.setParameter("p2",aluno);
 		List<Matricula> aux = query.getResultList();
 		return (aux.size() > 0)?aux.get(0):null;
 	}
