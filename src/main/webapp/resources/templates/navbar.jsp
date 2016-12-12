@@ -31,14 +31,6 @@
 					href="<%=request.getContextPath()%>/matricula/cursoListar"
 					style="color: silver"><span
 						class="glyphicon glyphicon-folder-open"></span> Matrícula</a></li>
-				<li class="dropdown login background-iten-menu" onclick="trazerMenuFrente()"><a style="color: silver;"
-					class=" dropdown-toggle" id="dropdownMenu1"
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span
-						class=""><img src="../imagens/login.png"></span>
-						fabricioresendeb@hotmail.com </a>
-					<ul class="sub-menu" id="sub-menu">
-						<li><a href="#">Sair do Sistema</a></li>
-					</ul></li>
 			</ul>
 		</div>
 		<!--/.nav-collapse -->
