@@ -38,9 +38,9 @@ public class Instanciacao extends HttpServlet {
 			Curso c1 = new Curso(null, "Sistemas para Internet",2800,new BigDecimal("900.00"),5.0);
 			Curso c2 = new Curso(null, "Ciência da computacao",4200,new BigDecimal("1000.00"),3.0);
 			
-			Turma t1 = new Turma(null, sdf.parse("20/10/2015"),30,true,c1);
+			Turma t1 = new Turma(null, sdf.parse("20/10/2015"),30,false,c1);
 			Turma t2 = new Turma(null, sdf.parse("01/02/2014"),40,false,c2);
-			Turma t3 = new Turma(null, sdf.parse("25/10/2015"),30,true,c1);
+			Turma t3 = new Turma(null, sdf.parse("25/10/2015"),30,false,c1);
 			Turma t4 = new Turma(null, sdf.parse("05/02/2014"),40,false,c2);
 			
 		    Aluno a1 = new Aluno(null,"Fernanda","43191169334","(34)99780215",sdf.parse("20/02/2002"),"fernanda@gmail.com",new BigDecimal("700.00"));

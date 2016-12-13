@@ -26,33 +26,31 @@
 	<div class="card card-container card-block grid">
 		<div class="card-header card-block card-titulo">
 			<h1 class="card-title">
-				<span class="glyphicon glyphicon-education"></span>Escolha um curso
+				<span class="glyphicon  glyphicon-folder-open"></span> Matriculas   
 			</h1>
 		</div>
+
 		<table class="table">
 			<thead>
 				<tr>
 					<th>Código</th>
-					<th>Nome</th>
-					<th>Preço</th>
-					<th>Pontuação</th>
-					<th>Carga Horária</th>
-					<th>Ação</th>
+					<th>Data de Matrícula</th>
+					<th>Parcelas</th>
+					<th>Aluno</th>
+					<th>Turma</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${itens}" var="x">
 					<tr>
-						<td>${x.codCurso}</td>
-						<td>${x.nome}</td>
-						<td><fmt:setLocale value="pt_BR" /> <fmt:formatNumber
-								type="currency" value="${x.preco}" /></td>
-						<td>${x.pontuacao}</td>
-						<td>${x.cargaHoraria}</td>
-						<td><a
-							href="<%=request.getContextPath()%>/matricula/turmaListar?cod=${x.codCurso}"
-							class="btn btn-primary btn-xs">Selecionar</a></td>
-					</tr>
+						<td>${x.codMatricula}</td>
+						<td><fmt:formatDate type="date" value="${x.dataMatricula}" />
+						</td>
+						<td>${x.numParcelas}</td>
+						<td>${x.aluno.nome}</td>
+						<td>${x.turma.codTurma}
+						</td>
+						</tr>
 				</c:forEach>
 			</tbody>
 		</table>

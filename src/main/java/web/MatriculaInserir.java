@@ -24,7 +24,7 @@ import servico.ValidacaoException;
 public class MatriculaInserir extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
-	private static String DESTINO = "/matricula/alunosListar.jsp";
+	private static String DESTINO = "/matricula/matriculasListar.jsp";
 	private static String FORM = "/matricula/formIserir.jsp";
 	private static String ERRO = "/publico/erro.jsp";
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
@@ -41,7 +41,7 @@ public class MatriculaInserir extends HttpServlet{
 			m.setAluno(a);
 			ms.validar(m);
 			ms.inserir(m);
-			List<Aluno> itens = as.buscarAlunosOrderNome();
+			List<Matricula> itens = ms.buscarTodos();
 			
 		    request.setAttribute("itens",itens);
 		    request.setAttribute("codTurma",codTurma);

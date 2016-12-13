@@ -47,7 +47,7 @@
 						<td>${x.numeroDeVagas}</td>
 						<td><a
 							href="<%=request.getContextPath()%>/matricula/alunoListar?cod=${x.codTurma}"
-							class="btn btn-primary btn-xs">Entrar</a>
+							class="btn btn-primary btn-xs">Selecionar</a>
 					</tr>
 				</c:forEach>
 			</tbody>
